@@ -5,6 +5,10 @@ from __future__ import annotations
 import json
 from typing import Any
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import SystemMessage, HumanMessage
 
@@ -29,11 +33,11 @@ _AGENT_PERSONAS: dict[str, str] = {
 
 _VOTE_INSTRUCTION = """
 Given the query below, respond with ONLY valid JSON (no markdown fences) in this format:
-{
+{{
   "choice": "<your recommended choice as a short string>",
   "confidence": <float between 0.0 and 1.0>,
   "reasoning": "<one or two sentences explaining your reasoning>"
-}
+}}
 
 Query: {query}
 """
