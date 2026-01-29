@@ -5,12 +5,12 @@ from __future__ import annotations
 import json
 from typing import Any
 
-from langchain_openai import ChatOpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import SystemMessage, HumanMessage
 
 from confidence_voting.state import Vote, VotingState
 
-_LLM = ChatOpenAI(model="gpt-4o-mini", temperature=0.7)
+_LLM = ChatGoogleGenerativeAI(model="gemini-2.0-flash", temperature=0.7)
 
 _AGENT_PERSONAS: dict[str, str] = {
     "optimist": (

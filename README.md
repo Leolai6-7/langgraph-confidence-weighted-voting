@@ -20,10 +20,10 @@ START → dispatcher → [agent_optimist, agent_skeptic, agent_analyst] → aggr
 pip install -e .
 ```
 
-Set your OpenAI API key:
+Set your Google API key:
 
 ```bash
-export OPENAI_API_KEY="sk-..."
+export GOOGLE_API_KEY="your-api-key"
 ```
 
 ## Usage
